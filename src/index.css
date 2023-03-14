@@ -1,0 +1,29 @@
+html {
+  position: relative;
+  /* border: 20px solid green; */
+  /* width: 100vw; */
+  background: url("./assets/background.jpg") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: white;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Cabin", sans-serif;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 500;
+  min-height: 100vh;
+}
+a {
+  text-decoration: inherit;
+  color: inherit;
+}
