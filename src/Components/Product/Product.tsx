@@ -1,8 +1,22 @@
+import React, { useEffect } from "react";
+import { getAllProducts } from "../../../api/firebase";
 const Product = () => {
+  const [data, setData] = React.useState([{ id: "no Product found" }]);
+
+  useEffect(() => {
+    getAllProducts().then((value) => {
+      setData(value);
+    });
+  }, []);
+
+  function productElement() {
+    return data.map((curr) => <h2 key={curr.id}>{curr.id}</h2>);
+  }
   return (
-    <div>
-      <h1>Product</h1>
-    </div>
+    <>
+      <h1>Product1</h1>
+      {productElement()}
+    </>
   );
 };
 
