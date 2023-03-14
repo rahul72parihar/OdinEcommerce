@@ -1,0 +1,56 @@
+.solo {
+  background-color: rgba(0, 0, 0, 0.25);
+  padding: 0.5em;
+  border-radius: 0.5em;
+  width: 95%;
+  font-size: 1.2em;
+  text-shadow: 0 0 10px rgb(0, 0, 0);
+}
+.solo > h4 {
+  padding: 0.5em 0;
+}
+.solo > h5 {
+  padding: 0.5 0;
+}
+.solo > img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 1em;
+  opacity: 0.5;
+  filter: brightness(0.5);
+  filter: grayscale(0.5);
+  transition: 0.3s;
+}
+.solo > img:hover {
+  filter: brightness(1);
+  filter: grayscale(0);
+  opacity: 1;
+}
+@media (min-width: 300px) {
+  .solo {
+    min-width: 200px;
+    max-width: 300px;
+  }
+  .solo > img {
+    height: 400px;
+  }
+}
+@media (min-width: 500px) {
+  .solo {
+    width: 200px;
+  }
+  .solo > img {
+    height: 300px;
+  }
+}
+@media (min-width: 800px) {
+  .solo {
+    font-size: 1.5em;
+    width: 280px;
+    flex-grow: 0;
+  }
+  .solo > img {
+    height: 450px;
+  }
+}
