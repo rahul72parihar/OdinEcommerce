@@ -6,6 +6,7 @@ import Footer from "./Components/Footer/Footer";
 import Header from "./Components/Header/Header";
 import Home from "./Components/Homepage/Home";
 import Product from "./Components/Product/Product";
+import Search from "./Components/Search/Search";
 function App() {
   return (
     <>
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<Product />} />
           <Route path="/about" element={<About />} />
+          <Route path="/search/:toSearch" element={<Search />} />
         </Routes>
         <Footer />
       </BrowserRouter>

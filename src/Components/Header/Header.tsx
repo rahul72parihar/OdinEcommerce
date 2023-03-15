@@ -13,6 +13,23 @@ const Header = () => {
     if (window.pageYOffset > 70) setSticky(true);
     else setSticky(false);
   });
+  const [showSearchDiv, setShowSearchDiv] = React.useState(false);
+  function handleSearchDiv() {
+    setShowSearchDiv((prev) => !prev);
+  }
+  const [searchText, setSearchText] = React.useState("");
+  function handleSearchText(e: any) {
+    setSearchText(e.target.value);
+  }
+  function handleSearch() {
+    setShowSearchDiv(false);
+    setSearchText("");
+  }
+  function handleEnter(e: React.KeyboardEvent) {
+    if (e.key !== "Enter") return;
+    document.getElementById("search-button")?.click();
+    handleSearch();
+  }
   const count = 0;
   return (
     <div className={`header ${sticky ? "sticky" : ""}`}>
@@ -33,7 +50,27 @@ const Header = () => {
       <div className="right">
         <div>
           <div className="searchIcon">
-            <AiOutlineSearch />
+            <div onClick={handleSearchDiv}>
+              <AiOutlineSearch />
+            </div>
+            {showSearchDiv && (
+              <div className="searchDiv">
+                <input
+                  type="text"
+                  onChange={handleSearchText}
+                  onKeyDown={handleEnter}
+                />
+                <Link
+                  to={{
+                    pathname: `/search/${searchText}`,
+                  }}
+                >
+                  <button id="search-button" onClick={handleSearch}>
+                    Enter
+                  </button>
+                </Link>
+              </div>
+            )}
           </div>
         </div>
         <AiOutlineHeart />
