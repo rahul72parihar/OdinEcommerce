@@ -12,7 +12,6 @@ const SingleProduct = () => {
     promise.then((value: any) => {
       setData(value[0]);
     });
-    console.log(data);
   }, []);
   if (!data)
     return (
