@@ -35,7 +35,6 @@ const Search = () => {
   }, []);
 
   function productElement() {
-    console.log(searchText);
     if (!searchText) {
       return (
         <div>
