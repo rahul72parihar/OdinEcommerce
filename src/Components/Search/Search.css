@@ -22,7 +22,6 @@
   display: flex;
   flex-wrap: wrap;
   gap: 2em;
-  min-height: 60vh;
   justify-content: space-around;
 }
 @media (min-width: 500px) {
