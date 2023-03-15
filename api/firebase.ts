@@ -1,6 +1,11 @@
 import { initializeApp } from "firebase/app";
-import { collection, getDocs, getFirestore } from "firebase/firestore/lite";
-
+import {
+  collection,
+  getDocs,
+  getFirestore,
+  query,
+  where,
+} from "firebase/firestore/lite";
 const firebaseConfig = {
   apiKey: "AIzaSyA-yi3884uMF-T82Vq3TM1hnTeC4zl4BxA",
   authDomain: "ecommerceodin.firebaseapp.com",
@@ -24,5 +29,18 @@ async function getAllProducts() {
   }));
   return dataArr;
 }
+async function getOneProduct(title: string | undefined) {
+  const q = query(productsCollectionRef, where("title", "==", title));
 
-export { getAllProducts };
+  const querySnapshot = await getDocs(q);
+  const data = querySnapshot.docs.map((doc) => {
+    // doc.data() is never undefined for query doc snapshots
+    return {
+      ...doc.data(),
+      id: doc.id,
+    };
+  });
+  return data;
+}
+
+export { getAllProducts, getOneProduct };

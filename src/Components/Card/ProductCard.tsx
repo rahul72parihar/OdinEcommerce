@@ -1,9 +1,20 @@
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import { Link } from "react-router-dom";
 import "./ProductCard.css";
 const ProductCard = (props: any) => {
   return (
     <div className="solo">
-      <img src={props.image} alt={`image of the book ${props.title}`} />
+      <Link
+        to={{
+          pathname: `/product/${props.title}`,
+        }}
+      >
+        <img
+          className="product-image"
+          src={props.image}
+          alt={`image of the book ${props.title}`}
+        />
+      </Link>
       <div className="title">
         <h4>{props.title}</h4>
       </div>

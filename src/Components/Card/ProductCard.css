@@ -21,7 +21,7 @@
   padding: 0.05em 0.2em;
   line-height: 1.2em;
 }
-.solo > img {
+.product-image {
   width: 100%;
   height: 300px;
   object-fit: cover;
@@ -31,7 +31,7 @@
   filter: grayscale(0.5);
   transition: 0.3s;
 }
-.solo > img:hover {
+.product-image:hover {
   filter: brightness(1);
   filter: grayscale(0);
   opacity: 1;
@@ -42,7 +42,7 @@
     min-width: 200px;
     max-width: 300px;
   }
-  .solo > img {
+  .product-image {
     height: 400px;
   }
 }
@@ -50,7 +50,7 @@
   .solo {
     width: 200px;
   }
-  .solo > img {
+  .product-image {
     height: 300px;
   }
 }
@@ -60,7 +60,7 @@
     width: 280px;
     flex-grow: 0;
   }
-  .solo > img {
+  .product-image {
     height: 450px;
   }
 }

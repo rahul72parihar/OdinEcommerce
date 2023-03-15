@@ -46,6 +46,7 @@ const Search = () => {
       if (!curr.title.toLowerCase().includes(searchText.toLowerCase())) return;
       return (
         <ProductCard
+          id={curr.id}
           key={curr.id}
           title={curr.title}
           image={curr.image}

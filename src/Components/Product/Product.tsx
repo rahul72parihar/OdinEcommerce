@@ -66,6 +66,7 @@ const Product = () => {
         if (category !== "all" && curr.category !== category) return;
         return (
           <ProductCard
+            id={curr.id}
             key={curr.id}
             title={curr.title}
             image={curr.image}
