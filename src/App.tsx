@@ -10,7 +10,7 @@ import Search from "./Components/Search/Search";
 import SingleProduct from "./Components/SingleProduct/SingleProduct";
 function App() {
   return (
-    <>
+    <div className="app">
       <BrowserRouter>
         <Header />
         <Routes>
@@ -22,7 +22,7 @@ function App() {
         </Routes>
         <Footer />
       </BrowserRouter>
-    </>
+    </div>
   );
 }
 

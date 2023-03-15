@@ -2,7 +2,7 @@ import PaymentImage from "../../assets/payments.png";
 import "./Footer.css";
 const Footer = () => {
   return (
-    <>
+    <div className="footer-container">
       <div className="letter">
         <h4>NEWSLETTER</h4>
         <h3>Sign Up to NewsLetter</h3>
@@ -15,7 +15,7 @@ const Footer = () => {
         <h5>Rahul Parihar Pvt. Lim.</h5>
         <img src={PaymentImage} alt="payment image" />
       </div>
-    </>
+    </div>
   );
 };
 
