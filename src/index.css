@@ -27,3 +27,13 @@ a {
   text-decoration: inherit;
   color: inherit;
 }
+button {
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 0.2em;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 20px;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+}

@@ -29,3 +29,16 @@
     font-size: 30px;
   }
 }
+
+.category-filter {
+  margin: 1em 1em;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.category-filter > button {
+  text-transform: uppercase;
+  text-shadow: 0 0 5px black;
+}
