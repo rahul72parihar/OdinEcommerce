@@ -1,16 +1,21 @@
-import "./Header.css";
-// import { useContext } from "react";
+import React from "react";
 import {
   AiOutlineHeart,
   AiOutlineSearch,
   AiOutlineShoppingCart,
 } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import "./Header.css";
 
 const Header = () => {
+  const [sticky, setSticky] = React.useState(false);
+  window.addEventListener("scroll", () => {
+    if (window.pageYOffset > 70) setSticky(true);
+    else setSticky(false);
+  });
   const count = 0;
   return (
-    <div className="header">
+    <div className={`header ${sticky ? "sticky" : ""}`}>
       <div className="left">
         <Link to="/">
           <ul>Home</ul>
