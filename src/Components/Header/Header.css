@@ -41,6 +41,10 @@
 }
 .cart {
   position: relative;
+  cursor: pointer;
+}
+.searchIcon {
+  cursor: pointer;
 }
 .cartScore {
   position: absolute;

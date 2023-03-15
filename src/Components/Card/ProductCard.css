@@ -4,6 +4,8 @@
   border-radius: 0.5em;
   width: 95%;
   font-size: 1.2em;
+  display: flex;
+  flex-direction: column;
   text-shadow: 0 0 10px rgb(0, 0, 0);
 }
 .title {
@@ -33,6 +35,7 @@
   filter: brightness(1);
   filter: grayscale(0);
   opacity: 1;
+  cursor: pointer;
 }
 @media (min-width: 300px) {
   .solo {
@@ -60,4 +63,23 @@
   .solo > img {
     height: 450px;
   }
+}
+.price {
+  margin-top: auto;
+  color: limegreen;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.2em;
+}
+.price > button {
+  background-color: rgb(33, 141, 33);
+  opacity: 0.8;
+  transition: 0.3s;
+}
+.price > button:hover {
+  cursor: pointer;
+  background-color: limegreen;
+  opacity: 1;
 }

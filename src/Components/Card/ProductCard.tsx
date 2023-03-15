@@ -1,3 +1,4 @@
+import { AiOutlineShoppingCart } from "react-icons/ai";
 import "./ProductCard.css";
 const ProductCard = (props: any) => {
   return (
@@ -6,7 +7,12 @@ const ProductCard = (props: any) => {
       <div className="title">
         <h4>{props.title}</h4>
       </div>
-      <h4>₹ {props.price}</h4>
+      <div className="price">
+        <h4>₹ {props.price}</h4>
+        <button>
+          ADD <AiOutlineShoppingCart />
+        </button>
+      </div>
     </div>
   );
 };

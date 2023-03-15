@@ -31,7 +31,11 @@ const Header = () => {
         <div className="center">RPSTORE</div>
       </Link>
       <div className="right">
-        <AiOutlineSearch />
+        <div>
+          <div className="searchIcon">
+            <AiOutlineSearch />
+          </div>
+        </div>
         <AiOutlineHeart />
         <div className="cart">
           <AiOutlineShoppingCart />
