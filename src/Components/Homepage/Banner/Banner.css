@@ -1,0 +1,107 @@
+*::-webkit-scrollbar {
+  width: 0;
+}
+.banner {
+  height: 250px;
+  width: 98vw;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+.arrow {
+  position: absolute;
+  top: 45%;
+  left: 1%;
+  width: 98%;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+}
+.arrow > div {
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: all;
+}
+.dot {
+  bottom: 10px;
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  width: 100vw;
+}
+.highlighted-dot {
+  transition: 0.3s;
+  color: white;
+  transform: scale(1.5);
+}
+.banner__image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+}
+.banner__i {
+  transition: 0.5s;
+  border-radius: 2em;
+  opacity: 0.9;
+  position: relative;
+  flex: 0 0 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  padding: 2vw;
+  font-size: 3vw;
+}
+.banner__i:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+.banner__i > h2 {
+  font-family: "Londrina Outline", cursive;
+  opacity: 1;
+  color: white;
+  text-shadow: 0 0 10px black;
+  width: 80%;
+  line-height: 1.2em;
+  pointer-events: none;
+}
+@media (min-width: 500px) {
+  .banner {
+    height: 300px;
+  }
+  .arrow > div {
+    font-size: 40px;
+    height: 60px;
+    width: 60px;
+  }
+  .dot {
+    font-size: 30px;
+  }
+  .banner__i {
+    padding: 5vw;
+    font-size: 2vw;
+    border: 1em;
+  }
+  .banner__i > h2 {
+    font-size: 4vw;
+  }
+}
+@media (min-width: 700px) {
+  .banner {
+    height: calc(100vh - 70px);
+  }
+}

@@ -20,6 +20,7 @@ const app = initializeApp(firebaseConfig);
 
 const db = getFirestore(app);
 const productsCollectionRef = collection(db, "products");
+const bannerCollectionRef = collection(db, "banner");
 
 async function getAllProducts() {
   const querySnapshot = await getDocs(productsCollectionRef);
@@ -28,6 +29,14 @@ async function getAllProducts() {
     id: doc.id,
   }));
   return dataArr;
+}
+async function getAllBanner() {
+  const querySnapshot = await getDocs(bannerCollectionRef);
+  const bannerArr = querySnapshot.docs.map((doc) => ({
+    ...doc.data(),
+    id: doc.id,
+  }));
+  return bannerArr;
 }
 async function getOneProduct(title: string | undefined) {
   const q = query(productsCollectionRef, where("title", "==", title));
@@ -43,4 +52,4 @@ async function getOneProduct(title: string | undefined) {
   return data;
 }
 
-export { getAllProducts, getOneProduct };
+export { getAllProducts, getOneProduct, getAllBanner };

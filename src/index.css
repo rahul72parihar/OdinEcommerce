@@ -7,7 +7,9 @@ html {
   background-size: cover;
   color: white;
 }
-* {
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
