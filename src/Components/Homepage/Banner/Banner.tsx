@@ -3,8 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { getAllBanner } from "../../../../api/firebase";
 import "./Banner.css";
 
-// import request from "graphql-request";
-
 import { useState } from "react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { GoPrimitiveDot } from "react-icons/go";
