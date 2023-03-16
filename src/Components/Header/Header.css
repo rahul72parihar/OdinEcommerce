@@ -31,6 +31,10 @@
   font-size: 0.6em;
   /* display: flex; */
 }
+.header-products {
+  display: block;
+  font-size: 18px;
+}
 .header .right {
   display: flex;
   gap: 1em;
@@ -48,8 +52,8 @@
 }
 .searchDiv {
   position: absolute;
-  top: 50px;
-  left: -55vw;
+  top: 40px;
+  left: -70vw;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -57,10 +61,12 @@
   background-color: #444444;
   border-radius: 10px;
   z-index: 9;
+  max-width: 80vw;
 }
 @media (min-width: 700px) {
   .searchDiv {
-    left: -150px;
+    left: -200px;
+    top: 50px;
   }
 }
 .searchDiv > input {
@@ -93,6 +99,9 @@
   .header .left {
     display: flex;
     gap: 1em;
+  }
+  .header-products {
+    display: none;
   }
   .cartScore {
     font-size: 15px;

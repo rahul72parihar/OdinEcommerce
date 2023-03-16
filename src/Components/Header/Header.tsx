@@ -1,9 +1,5 @@
 import React from "react";
-import {
-  AiOutlineHeart,
-  AiOutlineSearch,
-  AiOutlineShoppingCart,
-} from "react-icons/ai";
+import { AiOutlineSearch, AiOutlineShoppingCart } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import "./Header.css";
 
@@ -48,6 +44,9 @@ const Header = () => {
         <div className="center">RPSTORE</div>
       </Link>
       <div className="right">
+        <div className="header-products">
+          <Link to="/products">Products</Link>
+        </div>
         <div>
           <div className="searchIcon">
             <div onClick={handleSearchDiv}>
@@ -73,7 +72,8 @@ const Header = () => {
             )}
           </div>
         </div>
-        <AiOutlineHeart />
+        {/* <AiOutlineHeart /> */}
+
         <div className="cart">
           <AiOutlineShoppingCart />
           <div className="cartScore">{count}</div>
