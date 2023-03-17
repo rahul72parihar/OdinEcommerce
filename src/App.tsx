@@ -20,7 +20,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Signup />} />
             <Route
-              path="/home"
+              path="home"
               element={
                 <ProtectedRoute>
                   <Home />
@@ -28,16 +28,16 @@ function App() {
               }
             />
             <Route
-              path="/products"
+              path="products"
               element={
                 <ProtectedRoute>
                   <Product />
                 </ProtectedRoute>
               }
             />
-            <Route path="/about" element={<About />} />
+            <Route path="about" element={<About />} />
             <Route
-              path="/search/:toSearch"
+              path="search/:toSearch"
               element={
                 <ProtectedRoute>
                   <Search />
@@ -45,7 +45,7 @@ function App() {
               }
             />
             <Route
-              path="/product/:productid"
+              path="product/:productid"
               element={
                 <ProtectedRoute>
                   <SingleProduct />
