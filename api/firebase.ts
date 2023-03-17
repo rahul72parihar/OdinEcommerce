@@ -1,4 +1,5 @@
 import { initializeApp } from "firebase/app";
+import { getAuth, GoogleAuthProvider } from "firebase/auth";
 import {
   collection,
   getDocs,
@@ -60,5 +61,8 @@ async function getOneProduct(title: string | undefined) {
   });
   return data;
 }
+
+export const auth = getAuth(app);
+export const provider = new GoogleAuthProvider();
 
 export { getAllProducts, getOneProduct, getAllBanner, getAllRecent };

@@ -30,7 +30,7 @@ const Header = () => {
   return (
     <div className={`header ${sticky ? "sticky" : ""}`}>
       <div className="left">
-        <Link to="/">
+        <Link to="/home">
           <ul>Home</ul>
         </Link>
         <Link to="/about">
@@ -40,7 +40,7 @@ const Header = () => {
           <ul>Products</ul>
         </Link>
       </div>
-      <Link to="/">
+      <Link to="/home">
         <div className="center">RPSTORE</div>
       </Link>
       <div className="right">

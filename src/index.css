@@ -27,11 +27,11 @@ body {
   -ms-overflow-style: none; /* for Internet Explorer, Edge */
   scrollbar-width: none; /* for Firefox */
   overflow-y: scroll;
-  padding-bottom: 190px;
+  padding-bottom: 120px;
 }
 @media (min-width: 700px) {
   body {
-    padding-bottom: 260px;
+    padding-bottom: 180px;
   }
 }
 

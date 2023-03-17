@@ -1,0 +1,32 @@
+.signup-container {
+  display: flex;
+  height: 50vh;
+  justify-content: center;
+  align-items: center;
+}
+.signup-container > div {
+  background-color: rgba(5, 5, 5, 0.7);
+  font-size: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 1em 2em;
+  font-weight: bold;
+  border-radius: 0.3em;
+  transition: 0.4s;
+}
+.signup-container > div:hover {
+  cursor: pointer;
+  background-color: black;
+  transform: scale(1.1);
+}
+.larger {
+  font-size: 2em;
+}
+@media (min-width: 700px) {
+  .signup-container > div {
+    font-size: 40px;
+  }
+}
