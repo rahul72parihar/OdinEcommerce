@@ -6,15 +6,13 @@ import { auth, provider } from ".././../api/firebase";
 export const userAuthContext = createContext(null);
 export function UserAuthContextProvider({ children }: any) {
   const [user, setUser] = React.useState("");
-  console.log(user);
+  const [loading, setLoading] = React.useState(true);
   const signInWithGoogle = () => {
     signInWithPopup(auth, provider)
       .then((result: any) => {
-        console.log(result);
-        return <Navigate to="/home" state={{ from: location }} replace />;
+        return <Navigate to="/" state={{ from: location }} replace />;
       })
       .catch((error: any) => {
-        console.log(error);
         return false;
       });
   };
@@ -29,6 +27,7 @@ export function UserAuthContextProvider({ children }: any) {
   React.useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser: any) => {
       setUser(currentUser);
+      setLoading(false);
     });
     return () => {
       unsubscribe();
@@ -36,7 +35,9 @@ export function UserAuthContextProvider({ children }: any) {
   }, []);
 
   return (
-    <userAuthContext.Provider value={{ signInWithGoogle, user, googleSignOut }}>
+    <userAuthContext.Provider
+      value={{ signInWithGoogle, user, googleSignOut, loading }}
+    >
       {children}
     </userAuthContext.Provider>
   );
