@@ -18,7 +18,11 @@
   margin-top: 20px;
 }
 .signout-button {
-  font-size: 1.4em;
+  font-size: 1.3em;
+  transition: 0.3s;
+}
+.signout-button:hover {
+  transform: scale(1.1);
 }
 .email {
   width: 100%;

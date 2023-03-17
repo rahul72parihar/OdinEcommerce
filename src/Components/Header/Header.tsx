@@ -40,7 +40,7 @@ const Header = () => {
           <ul>Products</ul>
         </Link>
       </div>
-      <Link to="/home">
+      <Link to="/">
         <div className="center">RPSTORE</div>
       </Link>
       <div className="right">

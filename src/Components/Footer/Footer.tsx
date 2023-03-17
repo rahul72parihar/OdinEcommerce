@@ -12,7 +12,7 @@ const Footer = () => {
           </button>
         </div>
       )}
-      {!user && (
+      {!user && user !== "" && (
         <div className="letter">
           <h4>NEWSLETTER</h4>
           <h3>Sign Up to NewsLetter</h3>
