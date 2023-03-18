@@ -59,7 +59,8 @@ const Product = () => {
         ) => {
           if (order === "descending") return b.price - a.price;
           else if (order === "ascending") return a.price - b.price;
-          else return Math.random() - 0.5;
+          else if (order === "random") return Math.random() - 0.5;
+          else return 0;
         }
       )
       .map((curr) => {

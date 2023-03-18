@@ -40,29 +40,34 @@
 }
 @media (max-width: 700px) {
   .cart-container {
+    width: 90vw;
     border-radius: 20px;
     gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
   }
   .cart-container > .left > a > img {
     width: 30vw;
     border-radius: 1vw;
-    min-width: 100px;
-    max-width: 200px;
+    min-width: 150px;
+    max-width: 300px;
   }
   .cart-container > .right {
     display: flex;
     flex-direction: column;
-    width: 40vw;
+    align-items: center;
+    width: 80vw;
     padding: 1em;
-    gap: 2px;
-    font-size: 0.5em;
+    gap: 10px;
+    font-size: 0.8em;
+    text-align: center;
   }
   .cart-container > .right > button {
-    font-size: 1em;
-    margin: 2px;
-    border-radius: 5px;
+    font-size: 1.5em;
+    width: 60vw;
+    border-radius: 10px;
   }
   .cart-container > .right > h1 {
-    font-size: 1.8em;
+    font-size: 2em;
   }
 }

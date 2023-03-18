@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { AiOutlineSearch, AiOutlineShoppingCart } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { getShoppingCart } from "../../../api/firebase";
@@ -7,17 +7,18 @@ import "./Header.css";
 
 const Header = () => {
   const { count, user, setCount }: any = useUserAuth();
-  useEffect(() => {
+  const onMount = async () => {
     console.log(user);
     if (!user) {
       setCount(0);
       return;
     }
-    const promise1 = Promise.resolve(getShoppingCart(user.uid));
-    promise1.then((value: any) => {
+    const promise1 = Promise.resolve(await getShoppingCart(user.uid));
+    await promise1.then((value: any) => {
       setCount(value.cart.length);
     });
-  }, [location]);
+  };
+  onMount();
   const [sticky, setSticky] = React.useState(false);
   window.addEventListener("scroll", () => {
     if (window.pageYOffset > 70) setSticky(true);

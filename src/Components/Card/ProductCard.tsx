@@ -5,8 +5,9 @@ import { useUserAuth } from "../../context/UserAuthContext";
 import "./ProductCard.css";
 const ProductCard = (props: any) => {
   const { user }: any = useUserAuth();
-  const handleAddToCartButton = () => {
-    addProduct(user.uid, props.title, props.image, props.price);
+  const handleAddToCartButton = async () => {
+    await addProduct(user.uid, props.title, props.image, props.price);
+    document.location.reload();
   };
   return (
     <div className="solo">

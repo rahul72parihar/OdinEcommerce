@@ -22,6 +22,7 @@
   .cart-checkout {
     font-size: 0.6em;
     width: 90vw;
+    text-shadow: 0 0 5px black;
   }
   .cart-checkout > button {
     background-color: limegreen;
