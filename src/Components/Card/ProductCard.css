@@ -1,0 +1,85 @@
+.solo {
+  background-color: rgba(0, 0, 0, 0.25);
+  padding: 0.5em;
+  border-radius: 0.5em;
+  width: 95%;
+  font-size: 1.2em;
+  display: flex;
+  flex-direction: column;
+  text-shadow: 0 0 10px rgb(0, 0, 0);
+}
+.title {
+  overflow: hidden;
+  margin: 0.5em 0;
+}
+.title > h4 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  white-space: pre-wrap;
+  padding: 0.05em 0.2em;
+  line-height: 1.2em;
+}
+.product-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 1em;
+  opacity: 0.8;
+  filter: brightness(0.5);
+  filter: grayscale(0.5);
+  transition: 0.3s;
+}
+.product-image:hover {
+  filter: brightness(1);
+  filter: grayscale(0);
+  opacity: 1;
+  cursor: pointer;
+}
+@media (min-width: 300px) {
+  .solo {
+    min-width: 200px;
+    max-width: 300px;
+  }
+  .product-image {
+    height: 400px;
+  }
+}
+@media (min-width: 500px) {
+  .solo {
+    width: 200px;
+  }
+  .product-image {
+    height: 300px;
+  }
+}
+@media (min-width: 800px) {
+  .solo {
+    font-size: 1.5em;
+    width: 280px;
+    flex-grow: 0;
+  }
+  .product-image {
+    height: 450px;
+  }
+}
+.price {
+  margin-top: auto;
+  color: limegreen;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.2em;
+}
+.price > button {
+  background-color: rgb(33, 141, 33);
+  opacity: 0.8;
+  transition: 0.3s;
+}
+.price > button:hover {
+  cursor: pointer;
+  background-color: limegreen;
+  opacity: 1;
+}

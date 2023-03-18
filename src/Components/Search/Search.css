@@ -1,0 +1,11 @@
+.products-container {
+  width: 95%;
+  height: max-content;
+  margin: 2em auto;
+}
+.thumb-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  justify-content: space-around;
+}

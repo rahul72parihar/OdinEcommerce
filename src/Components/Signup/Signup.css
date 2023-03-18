@@ -1,0 +1,41 @@
+.signup-container {
+  display: flex;
+  height: 60vh;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+}
+.signin-button {
+  background-color: rgba(5, 5, 5, 0.7);
+  font-size: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 1em 2em;
+  font-weight: bold;
+  border-radius: 0.3em;
+  transition: 0.4s;
+}
+.signin-button:hover {
+  cursor: pointer;
+  background-color: black;
+  transform: scale(1.1);
+}
+.larger {
+  font-size: 2em;
+}
+@media (min-width: 700px) {
+  .signin-button {
+    font-size: 25px;
+  }
+  .signin-after {
+    gap: 20px;
+  }
+}
+.signin-after {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
