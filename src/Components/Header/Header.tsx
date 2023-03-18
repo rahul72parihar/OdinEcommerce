@@ -8,7 +8,6 @@ import "./Header.css";
 const Header = () => {
   const { count, user, setCount }: any = useUserAuth();
   const onMount = async () => {
-    console.log(user);
     if (!user) {
       setCount(0);
       return;
@@ -54,7 +53,7 @@ const Header = () => {
           <ul>Products</ul>
         </Link>
       </div>
-      <Link to="/">
+      <Link to="/home">
         <div className="center">RPSTORE</div>
       </Link>
       <div className="right">

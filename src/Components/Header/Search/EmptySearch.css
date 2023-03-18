@@ -1,0 +1,17 @@
+.empty-search {
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 80vw;
+  max-width: 400px;
+  margin: 30px auto;
+  border-radius: 20px;
+}
+.empty-search > h1 {
+  line-height: 1.2em;
+  font-size: 14px;
+}
+@media (min-width: 800px) {
+  .empty-search > h1 {
+    font-size: 25px;
+  }
+}

@@ -17,7 +17,6 @@ const ShoppingCart = () => {
   }, []);
   function renderCartItems() {
     return cart.map((curr: any) => {
-      //   console.log(curr);
       return (
         <CartCard
           key={curr.title}

@@ -73,7 +73,6 @@ async function getShoppingCart(uid: any) {
     const docSnap = await getDoc(shoppingCartCollectionRef);
     if (docSnap.exists()) {
       data = docSnap.data();
-      console.log(docSnap.data());
     } else {
       console.log("Document does not exist");
     }
@@ -94,7 +93,6 @@ const setShoppingCart = async (
 };
 const addShoppingCartItem = async (cart: any, index: number, uid: any) => {
   cart[index].quantity = cart[index].quantity + 1;
-  console.log(cart);
   await setDoc(doc(db, "user", uid), {
     cart: cart,
   });
@@ -113,15 +111,12 @@ const addNewItem = async (
 };
 const addProduct = async (uid: any, title: any, image: any, price: any) => {
   const shoppingCart: any = await getShoppingCart(uid);
-  console.log("shopping Cart", shoppingCart);
   if (!shoppingCart || shoppingCart.length === 0) {
     setShoppingCart(uid, title, image, price);
     return;
   }
-  console.log(shoppingCart.cart);
   const isPresent = shoppingCart.cart.find((curr: any) => curr.title === title);
   const cart = shoppingCart.cart;
-  console.log("Is Present", isPresent);
   if (isPresent) {
     const index = cart.indexOf(isPresent);
     addShoppingCartItem(cart, index, uid);

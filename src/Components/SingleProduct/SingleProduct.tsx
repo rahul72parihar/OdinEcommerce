@@ -19,12 +19,7 @@ const SingleProduct = () => {
     await addProduct(user.uid, title, image, price);
     document.location.reload();
   };
-  if (!data)
-    return (
-      <div>
-        <h1>Product Not found</h1>
-      </div>
-    );
+  if (!data) return <></>;
   else
     return (
       <div className="single-container">

@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import About from "./Components/About/About";
 import Footer from "./Components/Footer/Footer";
 import Header from "./Components/Header/Header";
+import EmptySearch from "./Components/Header/Search/EmptySearch";
 import Home from "./Components/Homepage/Home";
 import Product from "./Components/Product/Product";
 import ProtectedRoute from "./Components/ProtectedRoute/ProtectedRoute";
@@ -42,6 +43,14 @@ function App() {
               element={
                 <ProtectedRoute>
                   <Search />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="search"
+              element={
+                <ProtectedRoute>
+                  <EmptySearch />
                 </ProtectedRoute>
               }
             />

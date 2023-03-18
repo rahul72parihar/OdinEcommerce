@@ -1,11 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
+import { GoPrimitiveDot } from "react-icons/go";
 import { useNavigate } from "react-router-dom";
 import { getAllBanner } from "../../../../api/firebase";
 import "./Banner.css";
-
-import { useState } from "react";
-import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
-import { GoPrimitiveDot } from "react-icons/go";
 
 const Banner = () => {
   const [array, setData] = React.useState<any>();
@@ -18,10 +16,8 @@ const Banner = () => {
   const navigate = useNavigate();
   const handleNavigation = (title: string) => {
     navigate(`/product/${title}`);
-    console.log("navigate", title);
   };
   const [index, setIndex] = useState(0);
-
   const plus = () => {
     setIndex((prevIndex) => {
       if (prevIndex === array.length - 1) return 0;
@@ -34,6 +30,12 @@ const Banner = () => {
       else return prevIndex - 1;
     });
   };
+  useEffect(() => {
+    const interval = setInterval(() => {
+      document.getElementById("plusbutton")?.click();
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
   if (!array) return <></>;
   return (
     <div className="banner">
@@ -56,7 +58,7 @@ const Banner = () => {
         <div onClick={minus}>
           <FiChevronLeft />
         </div>
-        <div onClick={plus}>
+        <div id="plusbutton" onClick={plus}>
           <FiChevronRight />
         </div>
       </div>
