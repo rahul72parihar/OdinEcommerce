@@ -1,7 +1,13 @@
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import { addProduct } from "../../../api/firebase";
+import { useUserAuth } from "../../context/UserAuthContext";
 import "./ProductCard.css";
 const ProductCard = (props: any) => {
+  const { user }: any = useUserAuth();
+  const handleAddToCartButton = () => {
+    addProduct(user.uid, props.title, props.image, props.price);
+  };
   return (
     <div className="solo">
       <Link
@@ -20,7 +26,7 @@ const ProductCard = (props: any) => {
       </div>
       <div className="price">
         <h4>₹ {props.price}</h4>
-        <button>
+        <button onClick={handleAddToCartButton}>
           ADD <AiOutlineShoppingCart />
         </button>
       </div>

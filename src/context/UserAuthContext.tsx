@@ -7,6 +7,7 @@ export const userAuthContext = createContext(null);
 export function UserAuthContextProvider({ children }: any) {
   const [user, setUser] = React.useState("");
   const [loading, setLoading] = React.useState(true);
+  const [count, setCount] = React.useState(0);
   const signInWithGoogle = () => {
     signInWithPopup(auth, provider)
       .then((result: any) => {
@@ -16,10 +17,6 @@ export function UserAuthContextProvider({ children }: any) {
         return false;
       });
   };
-  // const unsubscribe = () => {
-  //   setUser("");
-  //   console.log("UNSUBSCRIBE");
-  // };
   const googleSignOut = () => {
     auth.signOut();
   };
@@ -36,7 +33,14 @@ export function UserAuthContextProvider({ children }: any) {
 
   return (
     <userAuthContext.Provider
-      value={{ signInWithGoogle, user, googleSignOut, loading }}
+      value={{
+        signInWithGoogle,
+        user,
+        googleSignOut,
+        loading,
+        count,
+        setCount,
+      }}
     >
       {children}
     </userAuthContext.Provider>

@@ -13,7 +13,20 @@
 }
 .single-left > img {
   width: 100%;
+  max-width: 300px;
   border-radius: 10px;
+}
+@media (max-width: 700px) {
+  .single-left > img {
+    max-width: 200px;
+  }
+  .single-right > h1 {
+    line-height: 1.1em;
+    font-size: 1.8em;
+  }
+  .single-right {
+    font-size: 1em;
+  }
 }
 .single-right {
   display: flex;

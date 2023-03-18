@@ -2,7 +2,8 @@ import React, { useEffect } from "react";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { HiOutlineBookOpen } from "react-icons/hi";
 import { useParams } from "react-router-dom";
-import { getOneProduct } from "../../../api/firebase";
+import { addProduct, getOneProduct } from "../../../api/firebase";
+import { useUserAuth } from "../../context/UserAuthContext";
 import "./SingleProduct.css";
 const SingleProduct = () => {
   const productId: string | undefined = useParams().productid;
@@ -13,6 +14,11 @@ const SingleProduct = () => {
       setData(value[0]);
     });
   }, []);
+  const { user }: any = useUserAuth();
+  const handleAddProduct = async (title: string, image: any, price: any) => {
+    await addProduct(user.uid, title, image, price);
+    document.location.reload();
+  };
   if (!data)
     return (
       <div>
@@ -28,7 +34,10 @@ const SingleProduct = () => {
         <div className="single-right">
           <h1>{data.title}</h1>
           <h1>₹ {data.price}</h1>
-          <button className="single-add-cart">
+          <button
+            className="single-add-cart"
+            onClick={() => handleAddProduct(data.title, data.image, data.price)}
+          >
             ADD <AiOutlineShoppingCart />
           </button>
           <div className="extra-details">

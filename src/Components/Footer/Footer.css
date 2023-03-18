@@ -18,12 +18,20 @@
   margin-top: 20px;
 }
 .signout-button {
-  font-size: 1.3em;
-  transition: 0.3s;
+  font-size: 12px;
+  transition: 0.5s;
+}
+@media (min-width: 700px) {
+  .signout-button {
+    font-size: 25px;
+  }
 }
 .signout-button:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
+  background-color: white;
+  color: black;
 }
+
 .email {
   width: 100%;
   display: flex;

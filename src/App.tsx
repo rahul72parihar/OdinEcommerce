@@ -11,6 +11,7 @@ import Search from "./Components/Search/Search";
 import Signup from "./Components/Signup/Signup";
 import SingleProduct from "./Components/SingleProduct/SingleProduct";
 import { UserAuthContextProvider } from "./context/UserAuthContext";
+import ShoppingCart from "./ShoppingCart/ShoppingCart";
 function App() {
   return (
     <div className="app">
@@ -49,6 +50,14 @@ function App() {
               element={
                 <ProtectedRoute>
                   <SingleProduct />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="cart"
+              element={
+                <ProtectedRoute>
+                  <ShoppingCart />
                 </ProtectedRoute>
               }
             />

@@ -84,7 +84,7 @@ const Product = () => {
     let target = e.target as HTMLButtonElement;
     setOrder(target.textContent);
   }
-
+  if (data[0].title === "") return <></>;
   return (
     <>
       <h1 className="product-header">Products</h1>

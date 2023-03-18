@@ -1,9 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { AiOutlineSearch, AiOutlineShoppingCart } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import { getShoppingCart } from "../../../api/firebase";
+import { useUserAuth } from "../../context/UserAuthContext";
 import "./Header.css";
 
 const Header = () => {
+  const { count, user, setCount }: any = useUserAuth();
+  useEffect(() => {
+    console.log(user);
+    if (!user) {
+      setCount(0);
+      return;
+    }
+    const promise1 = Promise.resolve(getShoppingCart(user.uid));
+    promise1.then((value: any) => {
+      setCount(value.cart.length);
+    });
+  }, [location]);
   const [sticky, setSticky] = React.useState(false);
   window.addEventListener("scroll", () => {
     if (window.pageYOffset > 70) setSticky(true);
@@ -26,7 +40,6 @@ const Header = () => {
     document.getElementById("search-button")?.click();
     handleSearch();
   }
-  const count = 0;
   return (
     <div className={`header ${sticky ? "sticky" : ""}`}>
       <div className="left">
@@ -74,10 +87,16 @@ const Header = () => {
         </div>
         {/* <AiOutlineHeart /> */}
 
-        <div className="cart">
-          <AiOutlineShoppingCart />
-          <div className="cartScore">{count}</div>
-        </div>
+        <Link
+          to={{
+            pathname: `/cart`,
+          }}
+        >
+          <div className="cart">
+            <AiOutlineShoppingCart />
+            <div className="cartScore">{count}</div>
+          </div>
+        </Link>
       </div>
     </div>
   );

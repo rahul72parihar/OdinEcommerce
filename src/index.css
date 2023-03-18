@@ -65,3 +65,24 @@ button {
   align-items: center;
   background-color: rgba(0, 0, 0, 0.644);
 }
+/* UTILITY CLASSES  */
+.limegreen {
+  color: rgb(49, 202, 49);
+}
+.green-button {
+  background-color: limegreen;
+}
+.red-button {
+  background-color: red;
+}
+.green-button,
+.red-button {
+  opacity: 0.8;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+.green-button:hover,
+.red-button:hover {
+  opacity: 1;
+  border-radius: 10px;
+}
